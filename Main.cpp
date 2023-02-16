@@ -29,7 +29,6 @@ int main()
     // получить доступ к любому элементу контейнера по индексу
     std::cout << "Доступ по индексу: "
               << "array1[4] = " << array1[4] << " | array2[3] = " << array2[3] << std::endl;
-
     try
     {
         int x = array1[100500];
@@ -50,7 +49,6 @@ int main()
         array2[i] = 0; // присвоить нули неопределенным значениям
     }
     array2.listValues("Все элементы массива array2 после увеличения размера: ");
-
     try
     {
         array1.resize(-5);
@@ -77,7 +75,6 @@ int main()
     // удалить элемент из контейнера.
     array1.remove(2);
     array1.listValues("Удаление элемента с индексом 2 в array1: ");
-
     try
     {
         array1.remove(-5);
@@ -102,7 +99,6 @@ int main()
     array1.listValues("Массив array1: ");
     int index = array1.search(55);
     std::cout << "В массиве array1 найдено число 55 под индексом: " << index << std::endl;
-
     try
     {
         int index = array1.search(100500);
@@ -112,13 +108,12 @@ int main()
         std::cout << "Исключение - Поиск элемента. " << e.what() << std::endl;
     }
     std::cout << std::endl;
-    // Поиск в контейнере элементов по значению
 
+    // Поиск в контейнере элементов по значению
     IntArray search;
     search = array2.searchAll(0);
     array2.listValues("Массив array2: ");
     search.listValues("В массиве array2 найдены значения 0 в индексах: ");
-
     try
     {
         search = array2.searchAll(100500);
