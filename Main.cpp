@@ -3,26 +3,21 @@
 int main()
 {
     // создать контейнер;
-
     IntArray array1 = IntArray(10);
-
     // заполнить его
     for (int i = 0; i < array1.getLength(); i++)
     {
         array1[i] = i;
     }
-
     array1.listValues("Все элементы массива array1: ");
 
     // скопировать контейнер
     IntArray array2;
     array2 = array1;
-
     array2.listValues("Все элементы массива array2, он копия массива array1: ");
 
     try
     {
-
         IntArray arr(-5);
     }
     catch (IntArrayBadLength &e)
@@ -30,6 +25,7 @@ int main()
         std::cout << "Исключение - Создание массива. IntArray arr(-5); " << e.what() << std::endl;
     }
     std::cout << std::endl;
+
     // получить доступ к любому элементу контейнера по индексу
     std::cout << "Доступ по индексу: "
               << "array1[4] = " << array1[4] << " | array2[3] = " << array2[3] << std::endl;
@@ -43,6 +39,7 @@ int main()
         std::cout << "Исключение - доступ по индексу. array1[100500]; " << e.what() << std::endl;
     }
     std::cout << std::endl;
+
     // изменить размер контейнера;
     array1.resize(5);
     array1.listValues("Все элементы массива array1 после уменьшения размера: ");
@@ -63,10 +60,10 @@ int main()
         std::cout << "Исключение - размер контейнера. array1.resize(-5); " << e.what() << std::endl;
     }
     std::cout << std::endl;
+
     // вставить элемент в контейнер;
     array1.insertBefore(333, 2);
     array1.listValues("Вставка значения 333 в индекс 2 в array1: ");
-
     try
     {
         array1.insertBefore(333, 100500);
@@ -99,6 +96,7 @@ int main()
     array1.insertAtEnd(777);
     array1.listValues("Вставка элемента со значением 777 в конец array1: ");
     std::cout << std::endl;
+
     // Поиск в контейнере элемента по значению
     array1.insertBefore(55, 6);
     array1.listValues("Массив array1: ");
