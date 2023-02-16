@@ -42,7 +42,6 @@ int main()
     // изменить размер контейнера;
     array1.resize(5);
     array1.listValues("Все элементы массива array1 после уменьшения размера: ");
-
     array2.resize(15);
     for (int i = 10; i < array2.getLength(); i++)
     {
