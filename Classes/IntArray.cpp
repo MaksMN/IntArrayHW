@@ -25,7 +25,7 @@ IntArray::IntArray(const IntArray &a)
 
 IntArray::~IntArray()
 {
-    std::cout << "Destructor" << std::endl;
+    // std::cout << "Destructor" << std::endl;
     delete[] m_data;
 }
 
@@ -47,7 +47,7 @@ int &IntArray::operator[](int index)
 
 void IntArray::reallocate(int newLength)
 {
-    if (newLength <= 0 || newLength == m_length || INT_MAX - newLength < 0)
+    if (newLength <= 0 || newLength == m_length)
     {
         throw IntArrayBadLength();
     }
@@ -151,4 +151,46 @@ void IntArray::remove(int index)
     delete[] m_data;
     m_data = data;
     --m_length;
+}
+
+int IntArray::search(int value)
+{
+    for (int i = 0; i < getLength(); i++)
+    {
+        if (m_data[i] == value)
+        {
+            return i;
+        }
+    }
+    throw IntArrayNoFoundException();
+}
+
+IntArray IntArray::searchAll(int value)
+{
+    IntArray results;
+    for (int i = 0; i < getLength(); i++)
+    {
+        if (m_data[i] == value)
+        {
+            results.insertAtEnd(i);
+        }
+    }
+    if (results.getLength() > 0)
+    {
+        return results;
+    }
+    else
+    {
+        throw IntArrayNoFoundException();
+    }
+}
+
+void IntArray::listValues(std::string message)
+{
+    std::cout << message;
+    for (int i = 0; i < getLength(); i++)
+    {
+        std::cout << m_data[i] << " ";
+    }
+    std::cout << std::endl;
 }

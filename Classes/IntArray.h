@@ -4,13 +4,14 @@
 #include <exception>
 #include "IntArrayBadRange.h"
 #include "IntArrayBadLength.h"
+#include "IntArrayNoFoundException.h"
 
 /// @brief Создает массив Integer
 class IntArray
 {
 private:
     int m_length{};
-    int* m_data{};
+    int *m_data{};
     int null_ptr = 0;
 
 public:
@@ -21,7 +22,7 @@ public:
     IntArray(int length);
 
     /// @brief Конструктор копирования
-    /// @param <IntArray>a 
+    /// @param <IntArray>a
     IntArray(const IntArray &a);
 
     ~IntArray();
@@ -65,4 +66,20 @@ public:
     /// @brief Возвращает длину массива
     /// @return int
     int getLength() const { return m_length; }
+
+    /// @brief Поиск элемента по значению
+    /// @exception IntArrayNoFoundException
+    /// @param value
+    /// @return Индекс первого найденного элемента в массиве
+    int search(int value);
+
+    /// @brief Поиск всех элементов по значению
+    /// @exception IntArrayNoFoundException
+    /// @param value
+    /// @return Массив IntArray с найденными элементами.
+    IntArray searchAll(int value);
+
+    /// @brief Выводит на экран список всех элементов массива
+    /// @param message Сообщение перед выводом списка
+    void listValues(std::string message);
 };

@@ -1,11 +1,11 @@
 #pragma once
 #include <exception>
 
-class IntArrayBadLength : public std::exception
+class IntArrayNoFoundException : public std::exception
 {
 public:
     virtual const char *what() const noexcept override
     {
-        return "ERROR: Bad length!";
+        return "ERROR: Search result not found!";
     }
 };
