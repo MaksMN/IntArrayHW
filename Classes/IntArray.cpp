@@ -16,7 +16,6 @@ IntArray::IntArray(int length) : m_length{length}
 IntArray::IntArray(const IntArray &a)
 {
     reallocate(a.getLength());
-
     for (int index{0}; index < m_length; ++index)
     {
         m_data[index] = a.m_data[index];
@@ -25,7 +24,6 @@ IntArray::IntArray(const IntArray &a)
 
 IntArray::~IntArray()
 {
-    // std::cout << "Destructor" << std::endl;
     delete[] m_data;
 }
 
@@ -51,7 +49,6 @@ void IntArray::reallocate(int newLength)
     {
         throw IntArrayBadLength();
     }
-
     erase();
     if (newLength <= 0)
         return;
@@ -65,9 +62,7 @@ void IntArray::resize(int newLength)
     {
         throw IntArrayBadLength();
     }
-
     int *data{new int[newLength]};
-
     if (m_length > 0)
     {
         int elementsToCopy{(newLength > m_length) ? m_length : newLength};
@@ -85,15 +80,14 @@ void IntArray::resize(int newLength)
 IntArray &IntArray::operator=(const IntArray &a)
 {
     if (&a == this)
+    {
         return *this;
-
+    }
     reallocate(a.getLength());
-
     for (int index{0}; index < m_length; ++index)
     {
         m_data[index] = a.m_data[index];
     }
-
     return *this;
 }
 
@@ -103,21 +97,16 @@ void IntArray::insertBefore(int value, int index)
     {
         throw IntArrayBadRange();
     }
-
     int *data{new int[m_length + 1]};
-
     for (int before{0}; before < index; ++before)
     {
         data[before] = m_data[before];
     }
-
     data[index] = value;
-
     for (int after{index}; after < m_length; ++after)
     {
         data[after + 1] = m_data[after];
     }
-
     delete[] m_data;
     m_data = data;
     ++m_length;
@@ -129,25 +118,20 @@ void IntArray::remove(int index)
     {
         throw IntArrayBadRange();
     }
-
     if (m_length == 1)
     {
         erase();
         return;
     }
-
     int *data{new int[m_length - 1]};
-
     for (int before{0}; before < index; ++before)
     {
         data[before] = m_data[before];
     }
-
     for (int after{index + 1}; after < m_length; ++after)
     {
         data[after - 1] = m_data[after];
     }
-
     delete[] m_data;
     m_data = data;
     --m_length;
