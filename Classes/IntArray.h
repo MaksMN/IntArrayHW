@@ -81,5 +81,5 @@ public:
 
     /// @brief Выводит на экран список всех элементов массива
     /// @param message Сообщение перед выводом списка
-    void listValues(std::string message);
+    void listValues(std::string message, bool showIndexes = true);
 };

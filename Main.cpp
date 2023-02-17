@@ -111,7 +111,7 @@ int main()
     IntArray search;
     search = array2.searchAll(0);
     array2.listValues("Массив array2: ");
-    search.listValues("В массиве array2 найдены значения 0 в индексах: ");
+    search.listValues("В массиве array2 найдены значения 0 в индексах: ", false);
     try
     {
         search = array2.searchAll(100500);
