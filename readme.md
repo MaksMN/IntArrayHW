@@ -44,7 +44,7 @@ int index = array.search(value); // Возвращает первый найде
 * поиск в контейнере всех элементов по значению.
 ```cpp
 IntArray search;
-search = array2.searchAll(0); 
+search = array2.searchAll(value); 
 // Возвращает объект IntArray со всеми найденными индексами или исключение IntArrayNotFound
 ```
 * исключения: 
