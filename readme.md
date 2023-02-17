@@ -26,16 +26,16 @@ array.reallocate(); // меняет размер с потерей всех да
 ```
 * вставить элемент в контейнер;
 ```cpp
-array1.insertBefore(value, index); // Вставляет новый элемент в указанный индекс без потери данных.
+array.insertBefore(value, index); // Вставляет новый элемент в указанный индекс без потери данных.
 ```
 * удалить элемент из контейнера;
 ```cpp
-array1.remove(index); 
+array.remove(index); 
 ```
 * вставка в начало и конец;
 ```cpp
-array1.insertAtBeginning(value);
-array1.insertAtEnd(value);
+array.insertAtBeginning(value);
+array.insertAtEnd(value);
 ```
 * поиск в контейнере элемента по значению;
 ```cpp
@@ -44,7 +44,7 @@ int index = array.search(value); // Возвращает первый найде
 * поиск в контейнере всех элементов по значению.
 ```cpp
 IntArray search;
-search = array2.searchAll(value); 
+search = array.searchAll(value); 
 // Возвращает объект IntArray со всеми найденными индексами или исключение IntArrayNotFound
 ```
 * исключения: 
