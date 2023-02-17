@@ -4,7 +4,7 @@
 #include <exception>
 #include "IntArrayBadRange.h"
 #include "IntArrayBadLength.h"
-#include "IntArrayNoFoundException.h"
+#include "IntArrayNotFound.h"
 
 /// @brief Создает массив Integer
 class IntArray

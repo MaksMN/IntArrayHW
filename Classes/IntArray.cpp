@@ -146,7 +146,7 @@ int IntArray::search(int value)
             return i;
         }
     }
-    throw IntArrayNoFoundException();
+    throw IntArrayNotFound();
 }
 
 IntArray IntArray::searchAll(int value)
@@ -165,7 +165,7 @@ IntArray IntArray::searchAll(int value)
     }
     else
     {
-        throw IntArrayNoFoundException();
+        throw IntArrayNotFound();
     }
 }
 

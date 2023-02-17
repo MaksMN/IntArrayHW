@@ -15,7 +15,6 @@ int main()
     IntArray array2;
     array2 = array1;
     array2.listValues("Все элементы массива array2, он копия массива array1: ");
-
     try
     {
         IntArray arr(-5);
@@ -102,7 +101,7 @@ int main()
     {
         int index = array1.search(100500);
     }
-    catch (IntArrayNoFoundException &e)
+    catch (IntArrayNotFound &e)
     {
         std::cout << "Исключение - Поиск элемента. " << e.what() << std::endl;
     }
@@ -117,7 +116,7 @@ int main()
     {
         search = array2.searchAll(100500);
     }
-    catch (IntArrayNoFoundException &e)
+    catch (IntArrayNotFound &e)
     {
         std::cout << "Исключение - Поиск элементов. " << e.what() << std::endl;
     }

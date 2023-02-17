@@ -1,7 +1,7 @@
 #pragma once
 #include <exception>
 
-class IntArrayNoFoundException : public std::exception
+class IntArrayNotFound : public std::exception
 {
 public:
     virtual const char *what() const noexcept override
