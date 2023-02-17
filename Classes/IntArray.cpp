@@ -174,7 +174,8 @@ void IntArray::listValues(std::string message, bool showIndexes)
     std::cout << message;
     for (int i = 0; i < getLength(); i++)
     {
-        if(showIndexes){
+        if (showIndexes)
+        {
             std::cout << "[" << i << "]=>";
         }
         std::cout << m_data[i] << " ";
